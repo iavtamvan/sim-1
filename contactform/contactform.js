@@ -38,21 +38,7 @@ jQuery(document).ready(function($) {
           case 'email':
             if (!emailExp.test(i.val())) {
               ferror = ierror = true;
-            }
-            break;
 
-          case 'checked':
-            if (! i.is(':checked')) {
-              ferror = ierror = true;
-            }
-            break;
-
-          case 'regexp':
-            exp = new RegExp(exp);
-            if (!exp.test(i.val())) {
-              ferror = ierror = true;
-            }
-            break;
         }
         i.next('.validation').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
